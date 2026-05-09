@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Mother's Day maa(PRINCESS NOORJAHAN)💐</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #c0596e;
+    --blush: #f5c6d0;
+    --cream: #fdf6f0;
+    --gold: #d4a44c;
+    --sage: #7a9e7e;
+    --deep: #3b1f2b;
+    --petal: #f9e4e8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Floating petals bg ── */
+  .petals-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+  }
+  .petal {
+    position: absolute;
+    width: 14px; height: 18px;
+    background: radial-gradient(ellipse at 30% 30%, #f9c5d1, #e8a0b4);
+    border-radius: 50% 0 50% 0;
+    opacity: 0;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(-30px) rotate(0deg) scale(0.8); opacity: 0; }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(720deg) scale(1); opacity: 0; }
+  }
+
+  /* ── Layout ── */
+  .page { position: relative; z-index: 1; display: flex; min-height: 100vh; }
+
+  /* ── LEFT PANEL ── */
+  .left-panel {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #fce8ee 0%, #f9d5e0 50%, #f4c6d0 100%);
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .left-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(192,89,110,0.15) 0%, transparent 70%);
+  }
+  .scene-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: var(--rose);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+  }
+  .illustration { width: 100%; max-width: 360px; filter: drop-shadow(0 8px 24px rgba(192,89,110,0.2)); }
+
+  /* ── RIGHT PANEL ── */
+  .right-panel {
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 50px;
+    position: relative;
+  }
+  .right-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 10%, rgba(212,164,76,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 90%, rgba(192,89,110,0.06) 0%, transparent 50%);
+  }
+
+  /* ── STEP SCREENS ── */
+  .screen { display: none; flex-direction: column; align-items: center; gap: 32px; position: relative; z-index: 1; text-align: center; width: 100%; }
+  .screen.active { display: flex; animation: fadeUp 0.7s ease both; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SCREEN 1: Welcome ── */
+  .welcome-badge {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .welcome-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.2;
+  }
+  .welcome-heading span {
+    color: var(--rose);
+    font-style: italic;
+  }
+  .welcome-sub {
+    font-size: 1rem;
+    color: #7a5c65;
+    line-height: 1.7;
+    max-width: 380px;
+  }
+
+  /* ── SCREEN 2: WISHES — clean & beautiful ── */
+  .wishes-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0;
+  }
+  .wishes-line1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #b07080;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .wishes-line2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 1.05;
+    background: linear-gradient(135deg, #c0596e 0%, #e07a55 40%, #c0596e 80%, #a04060 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeUp 0.9s ease 0.15s both;
+  }
+  .wishes-line3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #c0596e;
+    letter-spacing: 0.1em;
+    margin-top: 8px;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  /* ── SCREEN 3: Letter ── */
+  .letter-wrap {
+    background: #fffdf9;
+    border: 1px solid #e8d5c0;
+    border-radius: 4px;
+    padding: 44px 48px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(60,30,40,0.10), 0 2px 8px rgba(60,30,40,0.06);
+    text-align: left;
+    animation: unfold 0.8s cubic-bezier(0.22,1,0.36,1) both;
+  }
+  @keyframes unfold {
+    from { transform: scaleY(0.3) translateY(-40px); opacity: 0; transform-origin: top; }
+    to   { transform: scaleY(1) translateY(0); opacity: 1; }
+  }
+  .letter-fold {
+    position: absolute;
+    top: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 38px 38px 0;
+    border-color: transparent #f0e0c8 transparent transparent;
+  }
+  .letter-fold::after {
+    content: '';
+    position: absolute;
+    top: 2px; right: -37px;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 35px 35px 0;
+    border-color: transparent #fffdf9 transparent transparent;
+  }
+  .letter-date {
+    font-size: 0.78rem;
+    color: #b08060;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .letter-salute {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: var(--rose);
+    margin-bottom: 18px;
+  }
+  .letter-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    color: #4a3040;
+    line-height: 1.85;
+    margin-bottom: 24px;
+  }
+  .letter-sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    color: var(--rose);
+    text-align: right;
+  }
+  .letter-hearts {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 12px;
+    letter-spacing: 6px;
+    animation: heartbeat 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes heartbeat {
+    from { transform: scale(1); }
+    to   { transform: scale(1.15); }
+  }
+  .letter-divider {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 auto 20px;
+  }
+
+  /* ── DECORATED BUTTON ── */
+  .btn-magical {
+    position: relative;
+    background: linear-gradient(135deg, #c0596e 0%, #a0415a 50%, #c0596e 100%);
+    color: #fff;
+    border: none;
+    padding: 26px 44px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow: 0 4px 20px rgba(192,89,110,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    overflow: hidden;
+  }
+  .btn-magical::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+  .btn-magical:hover::before { transform: translateX(100%); }
+  .btn-magical:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(192,89,110,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+  .btn-magical:active { transform: scale(0.97); }
+  .btn-magical .btn-deco { margin: 0 6px; font-size: 1em; }
+
+  .btn-letter {
+    background: linear-gradient(135deg, #d4a44c 0%, #b8863a 50%, #d4a44c 100%);
+    box-shadow: 0 4px 20px rgba(212,164,76,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-letter:hover {
+    box-shadow: 0 8px 32px rgba(212,164,76,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+
+  /* ── Scroll for letter ── */
+  .letter-scroll { max-height: 70vh; overflow-y: auto; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .letter-scroll::-webkit-scrollbar { width: 4px; }
+  .letter-scroll::-webkit-scrollbar-track { background: transparent; }
+  .letter-scroll::-webkit-scrollbar-thumb { background: var(--blush); border-radius: 4px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .page { flex-direction: column; }
+    .left-panel { width: 100%; padding: 30px 20px; min-height: 45vh; }
+    .right-panel { width: 100%; padding: 40px 24px; min-height: 55vh; }
+    .welcome-heading { font-size: 2.2rem; }
+    .letter-wrap { padding: 30px 28px; }
+    .wishes-frame { padding: 24px 18px 22px; }
+    .wishes-title { font-size: 1.9rem; }
+    .wishes-title .accent { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating petals -->
+<div class="petals-bg" id="petalsBg"></div>
+
+<div class="page">
+
+  <!-- ═══════════ LEFT PANEL ═══════════ -->
+  <div class="left-panel">
+    <p class="scene-title">✨ A moment of love ✨</p>
+    <img src="mummypic.png" alt="Mother's Day Illustration" class="illustration">
+  </div>
+
+  <!-- ═══════════ RIGHT PANEL ═══════════ -->
+  <div class="right-panel">
+
+    <!-- SCREEN 1: Welcome -->
+    <div class="screen active" id="screen1">
+      <p class="welcome-badge">🌸 Mother's Day 2026 🌸</p>
+      <h1 class="welcome-heading">For the woman<br>who <span>means everything</span></h1>
+      <p class="welcome-sub">Mummy jhaan....... click here for your surpise.</p>
+      <button class="btn-magical" onclick="showWishes()">
+        <span class="btn-deco">🌺</span> Surprise <span class="btn-deco">🌺</span>
+      </button>
+    </div>
+
+    <!-- SCREEN 2: WISHES -->
+    <div class="screen" id="screen2">
+      <div class="wishes-simple">
+        <p class="wishes-line1">Happy</p>
+        <p class="wishes-line2">Mother's Day</p>
+        <p class="wishes-line3">Maa 🌸</p>
+        <button class="btn-magical btn-letter" onclick="showLetter()" style="margin-top:48px;">
+          <span class="btn-deco">💌</span> click here <span class="btn-deco">💌</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: Letter -->
+    <div class="screen" id="screen3">
+      <div class="letter-scroll">
+        <p style="font-family:'Dancing Script',cursive; color:var(--gold); font-size:1.1rem;">A letter from your bujjithalli👻</p>
+        <div class="letter-wrap">
+          <div class="letter-fold"></div>
+          <p class="letter-date">10th May, 2026</p>
+          <div class="letter-divider"></div>
+          <p class="letter-salute">My bangarukonda,</p>
+          <p class="letter-body">
+            Happy mothers day maaa.Eee letter chusi shock avvaku maa.<br><br>
+            .<br><br>
+            I noticed. I notice everything. And I carry it all with me, like a light that never goes out.<br><br>
+            You are the reason I know what <em>home</em> feels like, even far away. You are the voice that lives in my chest — the one that says "you can do this" even when the world says otherwise.<br><br>
+            Today and every day, I am so endlessly grateful that the universe chose you to be my mother. There is no gift greater than that.<br><br>
+            Thank you for your arms, your patience, your laughter, your prayers, and your unconditional, immovable love.
+          </p>
+          <div class="letter-divider"></div>
+          <p class="letter-sign">Yours forever,<br>Your little one 🌸</p>
+          <div class="letter-hearts">💕 🥰😘 💕</div>
+        </div>
+        <button class="btn-magical" onclick="restart()" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;">
+          <span>🔁</span><span>Begin Again</span><span>🔁</span>
+        </button>
+      </div>
+    </div>
+
+  </div><!-- end right-panel -->
+</div><!-- end page -->
+
+<script>
+  // ── Generate falling petals ──
+  const bg = document.getElementById('petalsBg');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (6 + Math.random() * 8) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    p.style.transform = `rotate(${Math.random()*360}deg)`;
+    p.style.width = (10 + Math.random() * 10) + 'px';
+    bg.appendChild(p);
+  }
+
+  function switchScreen(hideId, showId) {
+    const hide = document.getElementById(hideId);
+    const show = document.getElementById(showId);
+    hide.classList.remove('active');
+    setTimeout(() => {
+      show.style.display = 'flex';
+      requestAnimationFrame(() => show.classList.add('active'));
+    }, 200);
+  }
+
+  function showWishes() {
+    const s1 = document.getElementById('screen1');
+    s1.style.animation = 'fadeUp 0.4s ease reverse both';
+    setTimeout(() => {
+      s1.classList.remove('active');
+      s1.style.animation = '';
+      const s2 = document.getElementById('screen2');
+      s2.classList.add('active');
+    }, 350);
+  }
+
+  function showLetter() {
+    const s2 = document.getElementById('screen2');
+    s2.style.animation = 'fadeUp 0.4s ease reverse both';
+    setTimeout(() => {
+      s2.classList.remove('active');
+      s2.style.animation = '';
+      const s3 = document.getElementById('screen3');
+      s3.classList.add('active');
+    }, 350);
+  }
+
+  function restart() {
+    const s3 = document.getElementById('screen3');
+    s3.style.animation = 'fadeUp 0.4s ease reverse both';
+    setTimeout(() => {
+      s3.classList.remove('active');
+      s3.style.animation = '';
+      const s1 = document.getElementById('screen1');
+      s1.classList.add('active');
+    }, 350);
+  }
+</script>
+</body>
+</html>
